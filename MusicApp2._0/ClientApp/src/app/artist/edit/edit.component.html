@@ -1,0 +1,30 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Edit Artist</h3>
+    </div>
+    <div class="col text-right">
+      <a href="#" routerLink="/artist/list" class="btn btn-secondary btn-sm">Back To Artist List</a>
+    </div>
+  </div>
+  <br />
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)">
+    <div class="form-group">
+      <label for="artistId"> ID:</label>
+      <input formControlName="artistId"
+             id="artistId"
+             type="text"
+             class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="name"> Name:</label>
+      <input formControlName="name"
+             id="name"
+             type="text"
+             class="form-control" />
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!editForm.valid">Save</button>
+  </form>
+</div>

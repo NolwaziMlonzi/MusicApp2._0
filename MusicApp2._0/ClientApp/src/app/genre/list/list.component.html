@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+<body>
+
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active col-12">
+      <h4><i class="fa fa-dot-circle" aria-hidden="true"></i> Genres</h4>
+      <div class="d-flex">
+        <input class="form-control me-sm-2 col-11" type="text" id="search" placeholder="Search genre">
+        <button class="btn btn-secondary my-sm-0 col-1" (click)="searchGenre()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+
+        </button>
+      </div>
+    </li>
+
+  </ol>
+
+  <p>
+    <a href="#" routerLink="/genre/create/" id="goToAddGenre" class="btn btn-success btn-sm"> <i class="fa fa-plus" aria-hidden="true"></i> Add New Genre</a>
+  </p>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="genres">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th width="200px"></th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let genre of genres">
+        <td>{{ genre.name }}</td>
+        <td>{{ genre.description }}</td>
+        <td>
+          <a href="#" [routerLink]="['/genre/', genre.genreId, 'edit']" style="color: darkgoldenrod;"><i class="fa fa-pencil" aria-hidden="true" title="Edit Genre"></i></a> |
+          <a href="#" [routerLink]="['/genre/', genre.genreId, 'details']" style="color: slategrey;"><i class="fa fa-eye" aria-hidden="true" title="View Genre"></i></a> |
+          <button type="button" (click)="confirmedDeleteGenre(genre.genreId)" class="btn btn-danger btn-sm" style="color: indianred; cursor: pointer; background: transparent; border-style: none "><i class="fa fa-trash" aria-hidden="true" title="Delete Genre"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!genres" class="spinner">
+    <p><em>Please wait loading...</em></p>
+    <div class="spinner-grow text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-secondary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-dark" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="genres.length ==0" class="justify-content-lg-center text-center">
+    Search Not Found...<i class="fa fa-search-minus" aria-hidden="true"></i>
+
+  </div>
+
+</body>
+</html>

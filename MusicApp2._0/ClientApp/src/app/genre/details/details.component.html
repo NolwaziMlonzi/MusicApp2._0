@@ -1,0 +1,35 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>View Genre</h3>
+    </div>
+  </div>
+  <br />
+  <form [formGroup]="detailsForm" (ngSubmit)="onSubmit(createForm)">
+
+    <div class="form-group">
+      <label for="genreId"> ID:</label>
+      <input formControlName="genreId"
+             id="genreId"
+             type="text"
+             class="form-control" disabled />
+    </div>
+    <div class="form-group">
+      <label for="name"> Name:</label>
+      <input formControlName="name"
+             id="name"
+             type="text"
+             class="form-control" disabled />
+    </div>
+
+    <div class="form-group">
+      <label for="description"> Description:</label>
+      <input formControlName="description"
+             id="description"
+             type="text"
+             class="form-control" disabled />
+    </div>
+    <a href="#" routerLink="/genre/list" class="btn btn-secondary btn-sm">Back To Genre List</a>
+  </form>
+</div>

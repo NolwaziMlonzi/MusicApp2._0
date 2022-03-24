@@ -1,0 +1,32 @@
+
+/*set variables*/
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  color: #fff !important;
+}
+
+.navbar-dark.navbar-nav.nav-link {
+  color: rgba(255,255,255,.5) !important;
+}
+
+.navbar-collapse.collapse.d-sm-inline-flex.justify-content-center {
+  background-image: linear-gradient(to right, #902d97,#bc73e1, #ae64d3,#9933cc42) !important;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
